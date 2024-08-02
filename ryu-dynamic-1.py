@@ -194,12 +194,12 @@ class DynamicBandwidth(app_manager.RyuApp):
         if datapath_id == int(self.sB_dpid.replace(':', ''), 16):
             for stat in body:
                 if stat.port_no == self.sb_target_port:
-                    self.sb_packets += stat.rx_packets + stat.tx_packets
+                    self.sb_packets += stat.tx_packets
 
         if datapath_id == int(self.sC_dpid.replace(':', ''), 16):
             for stat in body:
                 if stat.port_no == self.sc_target_port:
-                    self.sc_packets += stat.rx_packets + stat.tx_packets
+                    self.sc_packets += stat.tx_packets
 
         # stat in body:
             #if stat.port_no == self.h1_port:
